@@ -1,0 +1,38 @@
+[package]
+name = "sovereign-shadow-bot"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# --- Blockchain & Ethereum Core ---
+# Ether-rs: Mempool scanning aur smart contract interaction ke liye
+ethers = { version = "2.0", features = ["ws", "rustls", "abigen"] }
+
+# --- Async Runtime ---
+# Tokio: High-speed, multi-threaded execution ke liye
+tokio = { version = "1", features = ["full"] }
+
+# --- System & Utilities ---
+# Eyere: Error handling ko asaan banane ke liye
+eyre = "0.6"
+# Dotenv: .env file se private keys load karne ke liye
+dotenv = "0.15"
+
+# --- Data Handling ---
+# Serde: JSON data parse karne ke liye (mempool decoding)
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+# Reqwest: Flashbots relay aur external APIs se connect karne ke liye
+reqwest = { version = "0.11", features = ["json"] }
+
+# --- Essential for Constants & Memory ---
+# Once_cell: Immutable addresses ko memory mein fast load karne ke liye
+once_cell = "1.18"
+# Hex-literal: Hex strings ko seedha Rust addresses mein convert karne ke liye
+hex-literal = "0.4.1"
+
+# --- Advanced Features (Optional but Recommended) ---
+# Dashmap: Multi-threaded environment mein fast storage ke liye
+dashmap = "5.5"
+# Futures: Asynchronous streams handle karne ke liye
+futures = "0.3"
